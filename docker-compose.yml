@@ -1,0 +1,20 @@
+version: '2'
+services:
+  dbserver:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    container_name: test
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=password
+
+  web:
+    build: .
+    command: revel run docker-revel-vue
+    ports:
+      - 9000:9000
+    depends_on:
+      - dbserver

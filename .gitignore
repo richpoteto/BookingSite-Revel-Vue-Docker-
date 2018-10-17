@@ -1,0 +1,13 @@
+test-results/
+tmp/
+routes/
+.idea/
+vendor/
+log/
+bin/config/.secret
+.env
+Dockerrun.aws.json
+*.zip
+*.txt
+/migrate
+packaged_*.yml
